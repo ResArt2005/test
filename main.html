@@ -10,9 +10,7 @@
 	<title>Test</title>
 </head>
 <body>
-
-	<form action="send.php" class="form-bg" method="post">
-		<?php
+<?php
 		$getQuery = array(
 		"chat_id"  => '-1001982371484',
 		"text"   => $message,
@@ -26,6 +24,8 @@
 
 		echo $resultQuery;
 	?>
+	<form action="send.php" class="form-bg" method="post">
+		
 		<input placeholder="ИМЯ" name="name" required type="text" class="form-input"><br><br><br>
 		<input placeholder="E-MAIL" name="email" required type="email" class="form-input"><br><br><br><a name="docs"></a>
 		<input placeholder="ВАШ ТЕЛЕФОН" name="phone" required type="text" class="form-input"><br><br><br>
