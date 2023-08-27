@@ -10,7 +10,22 @@
 	<title>Test</title>
 </head>
 <body>
-	<form action="" class="form-bg" method="post">
+
+	<form action="send.php" class="form-bg" method="post">
+		<?php
+		$getQuery = array(
+		"chat_id"  => '-1001982371484',
+		"text"   => $message,
+		"parse_mode" => "html"
+		);
+		$ch = curl_init("https://api.telegram.org/bot6657712685:AAFBcRnusc4wijUHQDukGBQIyYVRdHiYil4/getUpdates". $token ."/sendMessage?" . http_build_query($getQuery));
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_HEADER, false);
+		$resultQuery = curl_exec($ch);
+		curl_close($ch);
+
+		echo $resultQuery;
+	?>
 		<input placeholder="ИМЯ" name="name" required type="text" class="form-input"><br><br><br>
 		<input placeholder="E-MAIL" name="email" required type="email" class="form-input"><br><br><br><a name="docs"></a>
 		<input placeholder="ВАШ ТЕЛЕФОН" name="phone" required type="text" class="form-input"><br><br><br>
